@@ -10,10 +10,8 @@ RUN mvn dependency:go-offline -B
 
 # Copy the entire project source
 COPY src ./src
-
 # Build the application
 RUN mvn package
-
 # Stage 2: Deployment stage
 FROM tomcat:8.5.76-jdk11-openjdk-slim AS deploy
 
