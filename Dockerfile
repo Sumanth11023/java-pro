@@ -12,10 +12,8 @@ COPY src ./src
 RUN mvn package
 # Stage 2: Deployment stage
 FROM tomcat:8.5.76-jdk11-openjdk-slim AS deploy
-
 # Copy the built WAR file from the build stage to Tomcat's webapps directory
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/my-app.war
-
 # Optionally, you can set environment variables or perform other configurations here
 # For example:
 # ENV JAVA_OPTS="-Xms512m -Xmx1024m"
