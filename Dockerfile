@@ -17,6 +17,7 @@ COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/my-app.war
 # Optionally, you can set environment variables or perform other configurations here
 # For example:
 # ENV JAVA_OPTS="-Xms512m -Xmx1024m"
+
 # Expose the default Tomcat port
 EXPOSE 8080
 
